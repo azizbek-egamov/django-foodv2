@@ -7,15 +7,23 @@ from aiogram.types import (
     ReplyKeyboardRemove,
 )
 from aiogram.types.web_app_info import WebAppInfo
+from sqlite import one_table_info
 
 
 def home(id, name1, name2):
+    o = one_table_info("main_lang", "uid", id)
+    if f"{o[2]}" == "uz":
+        url = f"https://fastfood-toi.uz/?user_id={id}"
+    elif f"{o[2]}" == "ru":
+        url = f"https://fastfood-toi.uz/ru/?user_id={id}"
+    else:
+        url = f"https://fastfood-toi.uz/?user_id={id}"
     home = InlineKeyboardMarkup(
         inline_keyboard=[
             [
                 InlineKeyboardButton(
                     text=f"{name1}",
-                    web_app=WebAppInfo(url=f"https://food.pyco.uz/?user_id={id}"),
+                    web_app=WebAppInfo(url=f""),
                 ),
                 InlineKeyboardButton(
                     text=name2, callback_data="change_lang"
