@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+{% load multiply %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Page</title>
+    <link rel="stylesheet" href="{% static "products/styles.css" %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="order-container">
+        <div class="order-wrapper">
+        {% if status == True %}
+        <div class="order-header">
+            <h2>Корзина</h2>
+            <a class="uyt" href="/ru/edit">Edit</a>
+        </div>
+        <div class="order-items">
+        {% for food in foods %}
+        <div class="order-item">
+            <img     src="/media/{{ food.rasm }}" alt="{{food.nomi}}" class="item-image">
+            <div class="item-details">
+                <div>
+                    {% with total_price=food.narxi|multiply:food.soni %}
+                    <span class="item-name">{{food.nomi}} <span class="item-quantity">{{food.soni}}x</span></span>
+                    
+                </div>
+
+                <div class="main-set"><span class="item-price">{{total_price}}</span>
+                    {% endwith %}
+                    <a href="/ru/delete/{{food.user_id}}/{{food.id}}"><i class="edit-link fa-solid fa-trash"></i></a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        {% endfor %}
+
+        <div class="comment-section">
+            <textarea class="comment-box" placeholder="Оставьте комментарий..."></textarea>
+        </div>
+    </div>
+        <!-- <button class=""></button> -->
+        <a href="" class="pay-button pay-buttonn"></a>
+</div>  
+        {% else %}
+        <div class="order-header">
+            <h2>Ваша корзина пуста</h2>
+        </div>
+        <a class="pay-button uyt" href="/ru" style="color: #fff;">Добавить</a>
+        {% endif %}
+    </div>
+    <script src="{% static "products/scriptru.js" %}"></script>
+</body>
+
+</html>

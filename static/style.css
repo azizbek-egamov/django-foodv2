@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css?family=Zain&display=swap');
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #17212B;
+}
+
+img {
+    width: 80px;
+}
+
+h2 {
+    color: #fff;
+    font-size: 10px;
+}
+
+/* .forma div {
+    width: 50px;
+} */
+
+.decrement,
+.increment {
+    border: none;
+    border-radius: 4px;
+    background-color: #F8A917;
+    font-size: 20px;
+    color: #fff;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.forma {
+    display: contents;
+}
+
+.item {
+    height: 170px;
+    text-align: center;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.submit-container {
+    width: 90%;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px !important;
+}
+
+.submit {
+    display: none;
+}
+
+.item {
+    position: relative;
+}
+
+.count {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-weight: 600;
+    background: #f8a917;
+    color: white;
+}
+
+.submit {
+    /* width: 100%;
+    padding: 12px;
+    background-color: #31A537;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center; */
+
+    width: 100%;
+    padding: 12px;
+    background-color: #31A537;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.submiti {
+    /* width: 100%;
+    padding: 12px;
+    background-color: #31A537;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center; */
+
+    width: 100%;
+    padding: 12px;
+    background-color: #31A537;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.submit-container{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.onsubmit {
+    width: 100%;
+    justify-content: center;
+    background-color: #31A537;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+.onsubmiti {
+    width: 100%;
+    justify-content: center;
+    background-color: #31A537;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+button {
+    background-color: white;
+    width: 25px !important;
+    height: 25px !important;
+    transition: all 0.3s;
+    cursor: pointer;
+    border-bottom: 4px solid rgba(128, 128, 128, 0.7);
+}
+
+button:hover {
+    box-shadow: 0px 15px 25px -5px rgba(0, 0, 255, 0.4);
+    transform: scale(1.03);
+}
+
+button:active {
+    box-shadow: 0px 4px 8px rgba(0, 0, 255, 0.3);
+    transform: scale(0.98);
+}
+
+.blov {
+    display: none;
+}
+
+@media screen and (max-width: 380) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
+@-webkit-keyframes rotate-circle {
+    from {
+        transform: rotateZ(-90deg);
+    }
+
+    to {
+        transform: rotateZ(630deg);
+    }
+}
+
+@keyframes rotate-circle {
+    from {
+        transform: rotateZ(-90deg);
+    }
+
+    to {
+        transform: rotateZ(630deg);
+    }
+}
+
+@-webkit-keyframes resize-circle {
+    from {
+        stroke-dashoffset: 0;
+    }
+
+    to {
+        stroke-dashoffset: 12500px;
+    }
+}
+
+@keyframes resize-circle {
+    from {
+        stroke-dashoffset: 0;
+    }
+
+    to {
+        stroke-dashoffset: 12500px;
+    }
+}
+
+@-webkit-keyframes badge-incr {
+
+    from,
+    to {
+        transform: scale3d(1, 1, 1);
+    }
+
+    40% {
+        transform: scale3d(1.2, 1.2, 1);
+    }
+}
+
+@keyframes badge-incr {
+
+    from,
+    to {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1.2);
+    }
+}
+
+@-webkit-keyframes badge-incr2 {
+
+    from,
+    to {
+        transform: scale3d(1, 1, 1);
+    }
+
+    40% {
+        transform: scale3d(1.2, 1.2, 1);
+    }
+}
+
+@keyframes badge-incr2 {
+
+    from,
+    to {
+        transform: scale3d(1, 1, 1);
+    }
+
+    40% {
+        transform: scale3d(1.2, 1.2, 1);
+    }
+}
+
+@-webkit-keyframes badge-decr {
+
+    from,
+    to {
+        transform: scale3d(1, 1, 1);
+    }
+
+    40% {
+        transform: scale3d(0.8, 0.8, 1);
+    }
+}
+
+@keyframes badge-decr {
+
+    from,
+    to {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(0.8);
+    }
+}
+
+@-webkit-keyframes badge-decr2 {
+
+    from,
+    to {
+        transform: scale3d(1, 1, 1);
+    }
+
+    40% {
+        transform: scale3d(0.8, 0.8, 1);
+    }
+}
+
+@keyframes badge-decr2 {
+
+    from,
+    to {
+        transform: scale3d(1, 1, 1);
+    }
+
+    40% {
+        transform: scale3d(0.8, 0.8, 1);
+    }
+}
+
+@-webkit-keyframes badge-show {
+    from {
+        transform: scale3d(0.5, 0.5, 1);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    30% {
+        transform: scale3d(1.2, 1.2, 1);
+    }
+
+    to {
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes badge-show {
+    from {
+        transform: scale3d(0.5, 0.5, 1);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    30% {
+        transform: scale3d(1.2, 1.2, 1);
+    }
+
+    to {
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@-webkit-keyframes badge-hide {
+    from {
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    to {
+        transform: scale3d(0.5, 0.5, 1);
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes badge-hide {
+    from {
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    to {
+        transform: scale3d(0.5, 0.5, 1);
+        opacity: 0;
+        visibility: hidden;
+    }
+}

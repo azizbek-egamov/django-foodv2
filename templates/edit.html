@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+{% load custom_filters %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Food</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /></head>
+
+<body>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <div class="container">
+        <form class="forma">
+            {% for food_item in food %}
+                <div class="item">
+                    <img src="{{ food_item.rasm.url }}" alt="{{ food_item.nomi }}">
+                    <div>
+                        <h2>{{ food_item.nomi }} • {{ food_item.narxi }} uzs</h2>
+                        <div class="quantity-control">
+                            {% with matching_item=user|get_item_by_rand:food_item.rand %}
+                                {% if matching_item %}
+                                    <button class="decrement" onclick="updateQuantity(event, this, -1)">-</button>
+                                    <span class="count" name="{{ food_item.rand }}--{{ matching_item.soni }}">{{ matching_item.soni }}</span>
+                                    <button class="increment" onclick="updateQuantity(event, this, 1)">+</button>
+                                {% else %}
+                                    <button class="decrement" onclick="updateQuantity(event, this, -1)">-</button>
+                                    <span class="count" name="{{ food_item.rand }}--0">0</span>
+                                    <button class="increment" onclick="updateQuantity(event, this, 1)">+</button>
+                                {% endif %}
+                            {% endwith %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </form>
+    </div>
+    <div class="submit-container">
+        {% comment %} <a style="display: block; text-decoration: none;" href="/products" class="ab uyt submiti onsubmiti" style="text-decoration: none;">Savat</a> {% endcomment %}
+        <input style="display: block;" id="send-food" type="submit" class="uyt submit" value="O'zgarishlarni saqlash" onclick="submitOrder()">
+        <a href="/products" class="uyt onsubmit cx submit" style="text-decoration: none;">Saqlandi, Ko'rish</a>
+    </div>
+    <script src="{% static 'script-edit.js' %}"></script>
+</body>
+
+</html>
